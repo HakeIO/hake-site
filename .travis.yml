@@ -1,5 +1,3 @@
-language: haskell
-
 script:
   cp index.html public/
 
