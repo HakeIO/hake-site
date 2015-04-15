@@ -1,0 +1,19 @@
+language: haskell
+
+script:
+  cp index.html public/
+
+deploy:
+  provider: "s3"
+  bucket: "hake.io"
+  endpoint: "s3-website-us-west-2.amazonaws.com"
+  region: "us-west-2"
+  upload-dir: "/"
+  skip_cleanup: true
+  local-dir: "public/"
+  secret_access_key:
+    secure: "RRQsjQW+YTGgxr/fMcSis/nTwbJk5UARTz/Z1MxAx8mtOnRFHCMapa2SYGSenn8oCpCRKVbfUjm7WlVtk/NxcCB2yroJjJ+Amp7X12zfmvl57HU+EdruI/A0UhcR3VcdYGimIHfHWbaZJ3E1XIe/O50GrzlFsyWIXxJJLDno/BQ="
+  access_key_id:
+    secure: "YxKcBE+pf2w7WPpON9erai7hDtJH2yaa/lweK/E6h0sllSj3SnaYlccQr6lD2DXczaU7uBTPaYTCywR94oy3fLHDugfIRR6ixhNVn7SE/5Rq7hIVmpSgbYdayRP1zK9tezl8q+BAMfca69KIBd3DCGHeMevCNW5kJyB1QFIP3Mc=" 
+  on:
+    branch: "master"
