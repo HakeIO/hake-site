@@ -1,6 +1,6 @@
 script:
-  mkdir -p public/
-  cp index.html public/
+  - mkdir -p public/
+  - cp index.html public/
 
 deploy:
   provider: "s3"
